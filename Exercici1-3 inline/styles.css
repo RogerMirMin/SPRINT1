@@ -1,0 +1,178 @@
+body{
+    background: pink;
+}
+
+.header{
+    background-color: black;
+}
+
+.header__nav{
+    display: inline-block;
+    margin: 0.5em 0.5em 0.15em;
+    width: calc(100% - 1em);
+    background-color: grey;
+}
+
+.header__nav--item{
+    display: inline-block;
+    text-align: center;
+    background-color: red;
+}
+
+.item1{
+    width: calc(16.66667% - 0.33333em);
+    margin: 0.5em 0.25em 0.5em 0.5em;
+}
+
+.item2{
+    width: calc(66.6666% - 1.33334em);
+    margin: 0.5em 0.25em 0.5em 0.25em;
+}
+
+.item3 {
+    width: calc(16.66667% - 0.33333em);
+    margin: 0.5em 0.5em 0.5em 0.25em;
+}
+
+.header__div{
+    display: inline-block;
+    margin: 0.1em 0.5em 0.5em;
+    width: calc(100% - 1em);
+    background-color: orange;
+}
+
+.header__div--item{
+    display: inline-block;
+    width: calc(100% - 1em);
+    background-color: yellow;
+    margin: 0.5em;
+    text-align: center;
+}
+
+.main{
+    background-color: black;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.main__left{
+    display: inline-block;
+    margin: 0.5em 0.25em 0.5em 0.5em;
+    width: calc(66.6% - 0.75em);
+    background-color: grey;
+}
+/* Tot i així, les proporcions no són exactes: 345 vs 166*/
+
+.main__left--item{
+    display: inline-block;
+    background-color: blue;
+    width: calc(50% - 0.75em);
+}
+
+.one{
+    margin: 0.5em 0.25em 0.25em 0.5em;
+}
+
+.two{
+    margin: 0.5em 0.5em 0.25em 0.25em;
+}
+
+.three{
+    margin: 0.25em 0.25em 0.25em 0.5em;
+}
+
+.four{
+    margin: 0.25em 0.5em 0.25em 0.25em;
+}
+
+.main__left--footer{
+    display: inline-block;
+    margin: 0.25em 0.5em 0.5em 0.5em;
+    width: calc(100% - 1em);
+    background-color: aqua;
+}
+
+.main__right{
+    display: inline-block;
+    margin: 0.5em 0.5em 0.5em 0.25em;
+    width: calc(33.3% - 0.75em);
+    height: 86px; /*Única solució amb inline-block*/
+    vertical-align: top; /*Complement d'anterior línia*/
+    background-color: red;
+}
+
+.main__right--item{
+    display: inline-block;
+    width: calc(100% - 1em);
+    background-color: yellow;
+
+}
+
+.primer{
+    margin: 0.5em 0.5em 0.15em 0.5em;
+}
+
+.segon{
+    margin: 0.15em 0.5em 0.5em 0.5em;
+}
+
+.footer{
+    background-color: black;
+    margin-top: 0.5em;
+}
+
+.footer__item{
+    display: inline-block;
+    margin: 0.5em;
+    width: calc(100% - 1em);
+    text-align: center;
+    background-color: yellow;
+}
+
+
+@media screen and (max-width: 960px){
+        .main__left{
+            margin: 0.5em;
+            width: calc(100% - 1em);
+        }
+
+        .main__right{
+            margin: 0em 0.5em 0.5em 0.5em;
+            width: calc(100% - 1em);
+            height: auto;
+        }
+}
+
+@media screen and (max-width: 480px){
+    
+    .header__nav{
+        margin-bottom: 0.5em;
+    }
+    
+    .header__nav--item{
+        width: calc(100% - 1em);
+    }
+
+    .item1{
+        margin: 0.5em 0.5em 0.25em 0.5em;
+    }
+
+    .item2{
+        margin: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    .item3{
+        margin: 0.25em 0.5em 0.5em 0.5em;
+    }
+
+    .main__left--item{
+        margin: 0.5em 0.5em 0em 0.5em;
+        width: calc(100% - 1em);
+    }
+
+    .four{
+        margin-bottom: 0.5em;
+    }
+
+}
+

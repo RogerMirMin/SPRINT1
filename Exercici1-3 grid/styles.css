@@ -1,0 +1,270 @@
+body {
+    text-align: center;
+    display: grid;
+    row-gap: 0.5em;
+}
+
+.header {
+    background-color: black;
+    display: grid; /* Per evitar col·lapse de marges*/
+    grid-template-columns: 0fr 0fr 1fr 0fr 0fr;
+    grid-template-areas:
+        ". . . . ."
+        ". . . . ."
+        ". . nav . ."
+        ". . footer . ."
+        ". . . . ."
+        ". . . . .";
+    gap: 0.25em;
+}
+
+/* Versió grid pur, sense marges */
+.header__nav {
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 0fr 1fr 4fr 1fr 0fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". item1 item2 item3 ."
+        ". . . . .";
+    gap: 0.5em;
+    grid-area: nav;
+}
+
+.header__nav--item {
+    background-color: red;
+}
+
+
+.item1 {
+    grid-area: item1;
+}
+
+.item2 {
+    grid-area: item2;
+}
+
+.item3 {
+    grid-area: item3;
+}
+/* versió amb marges:
+.header__nav {
+    background-color: grey;
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.header__nav--item {
+    background-color: red;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+
+.item1 {
+    margin-right: 0.25em;
+    margin-left: 0.5em;
+}
+
+.item2 {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.item3 {
+    margin-right: 0.5em;
+    margin-left: 0.25em;
+}
+*/
+
+/*versió grid pur */
+
+.header__footer {
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    grid-template-areas: 
+        ". . ."
+        ". item ."
+        ". . .";
+    gap: 0.5em;
+    grid-area: footer;
+}
+
+.header__footer--item {
+    background-color: yellow;
+    grid-area: item;
+}
+
+/* Versió amb marges i padding
+.header__footer {
+    background-color: orange;
+    margin: 0 0.5em 0.5em 0.5em;
+    padding: 0.5em;
+}
+
+.header__footer--item {
+    background-color: yellow;
+}
+*/
+
+.main {
+    display: grid;
+    background-color: black;
+    grid-template-columns: 0fr 2fr 1fr 0fr;
+    grid-template-areas:
+        ". . . ."
+        ". left right . "
+        ". . . .";
+    gap: 0.5em;
+}
+
+.main__left {
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 0fr 1fr 1fr 0fr;
+    grid-template-areas:
+    ". . . ."
+    ". one two ."
+    ". three four ."
+    ". footer footer ."
+    ". . . .";
+    grid-area: left;
+    gap: 0.5em;
+}
+
+.main__left--item {
+    background-color: blue;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.main__left--footer {
+    background-color: aqua;
+    grid-area: footer;
+}
+
+.main__right { /*Truc perquè els elements right tinguin igual
+    mida i margin-top que els left però menys separació entre
+    ells */
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    grid-template-rows: 0fr 0fr 1fr 1fr 1fr 0fr 0fr 0fr 0fr;
+    grid-template-areas:
+        ". . ."
+        ". . ."
+        ". primer ."
+        ". segon ."
+        ". . ."
+        ". . ."
+        ". . ."
+        ". . ."
+        ". . .";
+    background-color: red;
+    grid-area: right;
+    gap: 0.25em;
+}
+
+.main__right--item {
+    background-color: yellow;
+}
+
+.primer {
+    grid-area: primer;
+}
+
+.segon {
+    grid-area: segon;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    grid-template-areas:
+    ". . ."
+    ". footer ."
+    ". . .";
+    background-color: black;
+    gap: 0.5em;
+}
+
+.footer__item {
+    background-color: yellow;
+    grid-area: footer;
+}
+
+@media screen and (max-width: 960px){
+    .main{
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-areas:
+        ". . ."
+        ". left ."
+        ". right ."
+        ". . .";
+    }
+
+    .main__right {
+        grid-template-rows: 0fr 0fr 1fr 1fr 0fr 0fr;
+        grid-template-areas:
+            ". . ."
+            ". . ."
+            ". primer ."
+            ". segon ."
+            ". . ."
+            ". . .";
+    }
+}
+
+@media screen and (max-width: 480px){
+    
+    .header {
+        grid-template-areas:
+            ". . . . ."
+            ". . . . ."
+            ". . nav . ."
+            ". . . . ."
+            ". . footer . ."
+            ". . . . ."
+            ". . . . .";
+        }
+    
+    .header__nav{
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-rows: 0fr 1fr 1fr 1fr 0fr;
+        grid-template-areas:
+            ". . ."
+            ". item1 ."
+            ". item2 ."
+            ". item3 ."
+            ". . .";
+    }
+
+    .main__left{
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-areas:
+            ". . ."
+            ". one ."
+            ". two ."
+            ". three ."
+            ". four ."
+            ". footer ."
+            ". . .";
+
+    }
+
+}

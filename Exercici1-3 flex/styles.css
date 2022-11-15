@@ -1,0 +1,164 @@
+body {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    background-color: black;
+    margin-bottom: 0.5em;
+}
+
+.header__nav {
+    display: flex;
+    background-color: grey;
+    margin: 0.5em 0.5em 0.15em 0.5em;
+}
+
+.header__nav--item {
+    background-color: red;
+    flex: 1 auto;
+}
+
+.item1 {
+    margin: 0.5em 0.25em 0.5em 0.5em;
+    flex: 1 20%;
+}
+
+.item2 {
+    margin: 0.5em 0.25em 0.5em 0.25em;
+    flex: 1 60%;
+}
+
+.item3 {
+    margin: 0.5em 0.5em 0.5em 0.25em;
+    flex: 1 20%;
+}
+
+.header__footer {
+    margin: 0.15em 0.5em 0.5em 0.5em;
+    background-color: orange;
+}
+
+.header__footer--item {
+    background-color: yellow;
+    margin: 0.5em;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    margin-bottom: 0.5em;
+}
+
+.main__left {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 calc(66.66% - 1.3333em);
+    background-color: grey;
+    margin: 0.5em 0.25em 0.5em 0.5em;
+}
+
+.main__left--item {
+    background-color: blue;
+    flex: 1 1 calc(50% - 0.75em);
+}
+
+.one {
+    margin: 0.5em 0.25em 0.25em 0.5em;
+}
+
+.two {
+    margin: 0.5em 0.5em 0.25em 0.25em;
+}
+
+.three {
+    margin: 0.25em 0.25em 0.25em 0.5em;
+}
+
+.four {
+    margin: 0.25em 0.5em 0.25em 0.25em;
+}
+
+.main__left--footer {
+    background-color: aqua;
+    margin: 0.25em 0.5em 0.5em 0.5em;
+    flex: 1 1 100%;
+}
+
+.main__right {
+    flex: 1 0 calc(33.34% - 0.6667em);
+    background-color: red;
+    margin: 0.5em 0.5em 0.5em 0.25em;
+}
+
+.main__right--item {
+    background-color: yellow;
+}
+
+.primer {
+    margin: 0.5em 0.5em 0.15em 0.5em;
+}
+
+.segon {
+    margin: 0.15em 0.5em 0.5em 0.5em;
+}
+
+.footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__item{
+    background-color: yellow;
+    margin: 0.5em;
+    flex: 1 0 auto;
+}
+
+@media screen and (max-width: 960px){
+    main{
+        flex-flow: column;
+    }
+
+    .main__right{
+        margin-top: 0em;
+        margin-left: 0.5em;
+    }
+
+    .main__left{
+        margin-right: 0.5em;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .header__nav{
+        flex-flow: column;
+    }
+
+    .item1{
+        margin: 0.5em 0.5em 0.25em 0.5em;
+    }
+
+    .item2 {
+        margin: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    .item3 {
+        margin: 0.25em 0.5em 0.5em 0.5em;
+    }
+
+    .main__left--item{
+        flex: 1 0 calc(100%-0.5em);
+        margin-top: 0.5em;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+    }
+
+    .four{
+        margin-bottom: 0.5em;
+    }
+
+}
